@@ -1,0 +1,8 @@
+{
+  "name": "marine-agent-skills",
+  "version": "0.1.0",
+  "description": "Claude Code skill pack for contributing to the Blue Life Commons / Ocean Intelligence System. Authoring skills that produce schema-valid, sourced, ethics-checked marine-conservation artifacts.",
+  "author": "frankxai",
+  "license": "MIT",
+  "keywords": ["marine", "ocean", "conservation", "blue-life-commons", "agent-skills", "mcp"]
+}

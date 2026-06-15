@@ -1,0 +1,30 @@
+{
+  "$comment": "Auto-activation rules for marine-agent-skills. Mirrors the Starlight Intelligence System skill-rules convention so this pack can register as the 'marine-intelligence' domain sub-stack.",
+  "domain": "marine-intelligence",
+  "skills": {
+    "species-page": {
+      "keywords": ["species page", "species guide", "document species", "cetacean", "pinniped", "sea turtle", "shark", "ray", "reef", "marine species"],
+      "intent": "Authoring or updating a species intelligence page for the commons."
+    },
+    "field-mission": {
+      "keywords": ["field mission", "citizen science", "whale watching", "observation protocol", "marine survey", "dive mission"],
+      "intent": "Authoring a citizen-science or travel field mission."
+    },
+    "ethics-check": {
+      "keywords": ["ethics check", "safe to publish", "wildlife ethics", "animal interaction", "disturbance"],
+      "intent": "Reviewing a draft against the wildlife-ethics policy before PR."
+    },
+    "source-verify": {
+      "keywords": ["verify sources", "check citations", "is this sourced", "claim verification", "provenance"],
+      "intent": "Claim-level source verification to prevent uncited drift."
+    },
+    "validate-artifact": {
+      "keywords": ["validate artifact", "schema check", "passes schema", "frontmatter valid"],
+      "intent": "Running the schema validator over a draft."
+    },
+    "open-artifact-pr": {
+      "keywords": ["open a pr", "submit contribution", "artifact pr", "contribute to commons"],
+      "intent": "Assembling and opening a review-gated PR for a finished artifact."
+    }
+  }
+}
