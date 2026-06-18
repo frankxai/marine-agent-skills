@@ -31,6 +31,7 @@ mcp/servers/<connector-id>/
 ```python
 """<Source Name> connector for Ocean Intelligence System."""
 from __future__ import annotations
+import datetime
 import json, urllib.request
 from typing import Callable
 from mcp.lib.signals import OceanState, Occurrence, Provenance  # whichever types you emit
@@ -60,14 +61,17 @@ def build_url(param1: str, param2: str | None = None) -> str:
 def normalize(raw: dict) -> list[OceanState]:  # or Occurrence[], etc.
     records = []
     for item in raw.get("items", []):
+        val = item.get("value")
+        if val is None:
+            continue
         prov = Provenance(
             dataset_id=item.get("id", "unknown"),
-            accessed=__import__("datetime").date.today().isoformat(),
+            accessed=datetime.date.today().isoformat(),
             **SOURCE_META,
         )
         records.append(OceanState(
             variable="<variable>",
-            value=float(item["value"]),
+            value=float(val),
             # ... other fields
             provenance=prov,
         ))
@@ -115,7 +119,7 @@ def handle(params: dict) -> dict:
 import json, pathlib, unittest
 from .connector import normalize, build_url, fetch_<signal>
 
-FIXTURE = json.loads((pathlib.Path(__file__).parent / "fixtures" / "sample_<signal>.json").read_text())
+FIXTURE = json.loads((pathlib.Path(__file__).parent / "fixtures" / "sample_<signal>.json").read_text(encoding="utf-8"))
 
 class TestNormalize(unittest.TestCase):
     def test_record_count(self):

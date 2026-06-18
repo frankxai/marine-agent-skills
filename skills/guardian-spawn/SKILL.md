@@ -40,11 +40,15 @@ scope:
   bbox: [lon_min, lat_min, lon_max, lat_max]   # WGS84 decimal degrees
 
 cadence:
-  mode: scheduled|event-driven
-  schedule: "0 6 * * *"  # cron string (mode: scheduled only)
-  triggers:              # (mode: event-driven only)
-    - source: obis
-      event: new_occurrence
+  mode: scheduled
+  schedule: "0 6 * * *"  # cron string — required when mode is scheduled
+
+# For event-driven guardians, use this pattern instead:
+# cadence:
+#   mode: event-driven
+#   triggers:
+#     - source: obis
+#       event: new_occurrence
 
 connectors:
   - id: coral-reef-watch
