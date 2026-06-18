@@ -25,6 +25,14 @@
     "open-artifact-pr": {
       "keywords": ["open a pr", "submit contribution", "artifact pr", "contribute to commons"],
       "intent": "Assembling and opening a review-gated PR for a finished artifact."
+    },
+    "guardian-spawn": {
+      "keywords": ["spawn a guardian", "create a guardian", "new guardian", "guardian instance", "ocean guardian", "guardian for", "watching region", "monitoring guardian"],
+      "intent": "Creating a new Ocean Guardian YAML manifest for the intelligence system."
+    },
+    "connector-build": {
+      "keywords": ["add a connector", "build a connector", "implement connector", "wire up data source", "new data source", "connector for"],
+      "intent": "Implementing a new MCP data connector for the Ocean Intelligence System."
     }
   }
 }
